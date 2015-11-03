@@ -3,8 +3,12 @@ import time
 
 class Pigo:
 
-    isMoving = False
-    servopos = 90
+    ################################
+    ### BASIC STATUS AND METHODS ###
+    ################################
+
+    status = {"ismoving" : False, "servopos" : 90, "leftspeed" : 150,
+              "rightspeed" : 150}
 
     def __init__(self):
         print "I've gained sentience; hello world"
@@ -20,6 +24,15 @@ class Pigo:
         while fwd() != 1:
             time.sleep(1)
             print "I've fallen, and I can't get up!"
+
+    ########################
+    ### ADVANCED METHODS ###
+    ########################
+
+
+    ############################
+    ### FULL APP STARTS HERE ###
+    ############################
 
 beatrix = Pigo()
 beatrix.fwd()
