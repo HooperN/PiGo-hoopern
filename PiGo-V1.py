@@ -14,7 +14,7 @@ class Pigo:
         print "I've gained sentience; hello world"
 
     def stop(self):
-        self.status[ismoving] = False
+        self.status["ismoving"] = False
         while stop() == -1:
             time.sleep(1)
             print "My velocity is > 0 and refuses to decrease"
