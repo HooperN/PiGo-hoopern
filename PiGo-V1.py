@@ -7,7 +7,7 @@ class Pigo:
     ### BASIC STATUS AND METHODS ###
     ################################
 
-    status = {"ismoving" : False, "servopos" : 90, "leftspeed" : 150,
+    status = {"ismoving" : False, "servopos" : 70, "leftspeed" : 150,
               "rightspeed" : 150}
 
     def __init__(self):
