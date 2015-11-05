@@ -14,14 +14,14 @@ class Pigo:
         print "I've gained sentience; hello world"
 
     def stop(self):
-        self.isMoving = False
-        while stop()!= 1:
+        self.status[isMoving] = False
+        while stop() == -1:
             time.sleep(1)
             print "My velocity is > 0 and refuses to decrease"
 
     def fwd(self):
-        self.isMoving = True
-        while fwd() != 1:
+        self.status["ismoving"] = True
+        while fwd() == -1:
             time.sleep(1)
             print "I've fallen, and I can't get up!"
 
