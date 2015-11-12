@@ -12,8 +12,13 @@ class Pigo:
     ### BASIC STATUS AND METHODS ###
     ################################
 
+<<<<<<< HEAD
     status = {"ismoving" : False, "servopos" : 90, "leftspeed" : 150,
               "rightspeed" : 150, 'dist' : 100}
+=======
+    status = {"ismoving" : False, "servopos" : 70, "leftspeed" : 150,
+              "rightspeed" : 150}
+>>>>>>> a0a1a6950becba6e97c880ed463a33bad9b768e4
 
     def __init__(self):
         print "I've gained sentience; hello world"
@@ -21,6 +26,7 @@ class Pigo:
 
     def stop(self):
         self.status["ismoving"] = False
+<<<<<<< HEAD
         i = 0
         i += 1
         while i < 0:
@@ -31,10 +37,15 @@ class Pigo:
             for z in range()
             stop()
             return stop()
+=======
+        while stop() == -1:
+            time.sleep(1)
+            print "My velocity is > 0 and refuses to decrease"
+>>>>>>> a0a1a6950becba6e97c880ed463a33bad9b768e4
 
     def fwd(self):
-        self.isMoving = True
-        while fwd() != 1:
+        self.status["ismoving"] = True
+        while fwd() == -1:
             time.sleep(1)
             print "I've fallen, and I can't get up!"
 
