@@ -1,5 +1,6 @@
 #GOPIGO AUTONOMOUS, INSTANTIATED CLASS
-#
+#http://www.dexterindustries.com/GoPiGo/programming/python-programming-for-
+# the-raspberry-pi-gopigo/
 
 from gopigo import *
 import time
@@ -23,9 +24,9 @@ class Pigo:
     def stop(self):
         self.status["ismoving"] = False
         i = 0
-        i += 1
         while i < 0:
             stop()
+            i += 1
             return stop()
         while stop()!= 1:
             print "The brakes are busted! Hold onto something!"
@@ -64,16 +65,29 @@ class Pigo:
     def dance(self):
         print "Dance fever!"
         if self.keepGoing():
-             self.circleLeft()
-             self.circleRight()
-             self.fwdBwd()
-             self.fullHeadturn()
-             self.strobe()
+            self.circleLeft()
+            self.servoSweep()
+            self.circleRight()
+            self.fwdBwd()
+            self.fullHeadturn()
+            self.strobe()
+            self.servoSweep()
 
     ########################
     ### ADVANCED METHODS ###
     ########################
 
+    def autoPilot(self):
+        self.fwd()
+        while self.keepGoing():
+            self.checkDist()
+        self.stop()
+
+    def servoSweep(self):
+        for ang in range(20, 160, 5):
+            servo(ang)
+            time.sleep(.1)
+            self.checkDist()
 
     def circleLeft(self):
         if self.keepGoing:
@@ -136,17 +150,16 @@ class Pigo:
             i += 1
 
 
-
-    def
-
-
     ############################
     ### FULL APP STARTS HERE ###
     ############################
 
 beatrix = Pigo()
+
 while beatrix.keepGoing():
     beatrix.fwd()
     time.sleep(2)
+
+beatrix.dance()
 
 beatrix.stop()
