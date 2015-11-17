@@ -30,9 +30,9 @@ class Pigo:
             return stop()
         while stop()!= 1:
             print "The brakes are busted! Hold onto something!"
-            for z in range():
-            stop()
-            return stop()
+            for z in range(10):
+                stop()
+                return stop()
         while stop() == -1:
             time.sleep(1)
             print "My velocity is > 0 and refuses to decrease"
