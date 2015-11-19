@@ -26,6 +26,8 @@ class Pigo:
         i = 0
         for x in range(5):
             stop()
+            time.sleep(.1)
+        time.sleep(1)
 
     def fwd(self):
         self.status["ismoving"] = True
@@ -87,9 +89,9 @@ class Pigo:
 
     def circleLeft(self):
         if self.keepGoing:
-            print "Left Circle!"
             thyme = time.clock()
             if time.clock() < 10 + thyme:
+                print "Left Circle!"
                 set_left_speed(100)
                 fwd()
             elif time.clock() == 10 + thyme:
@@ -103,9 +105,9 @@ class Pigo:
 
     def circleRight(self):
         if self.keepGoing:
-            print "Right Circle!"
             thyme = time.clock()
             if time.clock() < 10 + thyme:
+                print "Right Circle!"
                 set_right_speed(100)
                 fwd()
             elif time.clock() == 10 + thyme:
