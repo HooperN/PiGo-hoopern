@@ -81,10 +81,10 @@ class Pigo:
     def circleLeft(self):
         if self.keepGoing:
             thyme = time.clock()
-            if time.clock() < 40 + thyme:
+            if time.clock() < 10 + thyme:
                 set_left_speed(100)
                 fwd()
-            elif time.clock() == 40 + thyme:
+            elif time.clock() == 10 + thyme:
                 self.stop()
                 set_left_speed(200)
         else:
@@ -94,10 +94,10 @@ class Pigo:
     def circleRight(self):
         if self.keepGoing:
             thyme = time.clock()
-            if time.clock() < 40 + thyme:
+            if time.clock() < 10 + thyme:
                 set_right_speed(100)
                 fwd()
-            elif time.clock() == 40 + thyme:
+            elif time.clock() == 10 + thyme:
                 self.stop()
                 set_right_speed(200)
         else:
