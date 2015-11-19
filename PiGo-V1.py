@@ -89,6 +89,7 @@ class Pigo:
                 set_left_speed(200)
         else:
             print "Check keepGoing"
+            stop()
 
 
     def circleRight(self):
@@ -102,7 +103,7 @@ class Pigo:
                 set_right_speed(200)
         else:
             print "Check keepGoing"
-
+            stop()
 
     def fwdBwd(self):
         if self.keepGoing:
