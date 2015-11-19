@@ -23,11 +23,10 @@ class Pigo:
 
     def stop(self):
         self.status["ismoving"] = False
-        i = 0
+        print "Stopping."
         for x in range(5):
             stop()
-            time.sleep(.1)
-        time.sleep(1)
+
 
     def fwd(self):
         self.status["ismoving"] = True
@@ -55,22 +54,18 @@ class Pigo:
 
     def dance(self):
         print "Dance fever!"
-        if self.keepGoing():
-           # self.circleLeft()
-            #time.sleep(.1)
-
-            self.servoSweep()
-            time.sleep(.1)
-
-            self.circleRight()
-            time.sleep(.1)
-            self.fwdBwd()
-            time.sleep(.1)
-            self.fullHeadturn()
-            time.sleep(.1)
-            self.strobe()
-            time.sleep(.1)
-            self.servoSweep()
+       # self.circleLeft()
+        self.servoSweep()
+        self.stop()
+        self.circleRight()
+        self.stop()
+        self.fwdBwd()
+        time.sleep(.1)
+        self.fullHeadturn()
+        time.sleep(.1)
+        self.strobe()
+        time.sleep(.1)
+        self.servoSweep()
 
     ########################
     ### ADVANCED METHODS ###
@@ -83,8 +78,8 @@ class Pigo:
         self.stop()
 
     def servoSweep(self):
+        print "Sweep!"
         for ang in range(20, 160, 10):
-            print "Sweep!"
             servo(ang)
             time.sleep(.1)
             self.checkDist()
