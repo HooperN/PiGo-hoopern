@@ -55,11 +55,17 @@ class Pigo:
         print "Dance fever!"
         if self.keepGoing():
             self.circleLeft()
+            time.sleep(.1)
             self.servoSweep()
+            time.sleep(.1)
             self.circleRight()
+            time.sleep(.1)
             self.fwdBwd()
+            time.sleep(.1)
             self.fullHeadturn()
+            time.sleep(.1)
             self.strobe()
+            time.sleep(.1)
             self.servoSweep()
 
     ########################
@@ -85,6 +91,7 @@ class Pigo:
                 set_left_speed(100)
                 fwd()
             elif time.clock() == 10 + thyme:
+                time.sleep(1)
                 self.stop()
                 set_left_speed(200)
         else:
@@ -99,6 +106,7 @@ class Pigo:
                 set_right_speed(100)
                 fwd()
             elif time.clock() == 10 + thyme:
+                time.sleep(1)
                 self.stop()
                 set_right_speed(200)
         else:
