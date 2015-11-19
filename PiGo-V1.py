@@ -24,19 +24,8 @@ class Pigo:
     def stop(self):
         self.status["ismoving"] = False
         i = 0
-        while i < 0:
+        for x in range(5):
             stop()
-            i += 1
-            return stop()
-        while stop()!= 1:
-            print "The brakes are busted! Hold onto something!"
-            for z in range(10):
-                stop()
-                return stop()
-        while stop() == -1:
-            time.sleep(1)
-            print "My velocity is > 0 and refuses to decrease"
-
 
     def fwd(self):
         self.status["ismoving"] = True
@@ -155,10 +144,6 @@ class Pigo:
     ############################
 
 beatrix = Pigo()
-
-while beatrix.keepGoing():
-    beatrix.fwd()
-    time.sleep(2)
 
 beatrix.dance()
 
