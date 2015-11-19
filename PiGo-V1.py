@@ -57,9 +57,11 @@ class Pigo:
         print "Dance fever!"
         if self.keepGoing():
            # self.circleLeft()
-            time.sleep(.1)
+            #time.sleep(.1)
+
             self.servoSweep()
             time.sleep(.1)
+
             self.circleRight()
             time.sleep(.1)
             self.fwdBwd()
@@ -104,6 +106,14 @@ class Pigo:
 
 
     def circleRight(self):
+        print "Start CR"
+        for x in range(3):
+            right_rot()
+        time.sleep(1)
+        self.stop()
+        print "Done CR"
+
+        '''
         if self.keepGoing:
             thyme = time.clock()
             if time.clock() < 10 + thyme:
@@ -117,6 +127,7 @@ class Pigo:
         else:
             print "Check keepGoing"
             stop()
+        '''
 
     def fwdBwd(self):
         if self.keepGoing:
