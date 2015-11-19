@@ -80,12 +80,14 @@ class Pigo:
 
     def servoSweep(self):
         for ang in range(20, 160, 10):
+            print "Sweep!"
             servo(ang)
             time.sleep(.1)
             self.checkDist()
 
     def circleLeft(self):
         if self.keepGoing:
+            print "Left Circle!"
             thyme = time.clock()
             if time.clock() < 10 + thyme:
                 set_left_speed(100)
@@ -101,6 +103,7 @@ class Pigo:
 
     def circleRight(self):
         if self.keepGoing:
+            print "Right Circle!"
             thyme = time.clock()
             if time.clock() < 10 + thyme:
                 set_right_speed(100)
@@ -115,6 +118,7 @@ class Pigo:
 
     def fwdBwd(self):
         if self.keepGoing:
+            print "Forwards, Then Backwards!"
             thyme = time.clock()
             if time.clock() < thyme + 10:
                 fwd()
@@ -127,6 +131,7 @@ class Pigo:
 
 
     def fullHeadturn(self):
+        print "Head Turn!"
         servo(0)
         time.sleep(1)
         servo(180)
@@ -137,6 +142,7 @@ class Pigo:
 
     def strobe(self):
         i = 0
+        print "Strobe light!"
         while i < 3:
             led_on(1)
             time.sleep(1)
