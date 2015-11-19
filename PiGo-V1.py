@@ -5,7 +5,7 @@
 from gopigo import *
 import time
 
-STOP_DIST = 40
+STOP_DIST = 20
 
 class Pigo:
 
@@ -73,7 +73,7 @@ class Pigo:
         self.stop()
 
     def servoSweep(self):
-        for ang in range(20, 160, 5):
+        for ang in range(20, 160, 10):
             servo(ang)
             time.sleep(.1)
             self.checkDist()
