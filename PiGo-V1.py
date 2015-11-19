@@ -56,7 +56,7 @@ class Pigo:
     def dance(self):
         print "Dance fever!"
         if self.keepGoing():
-            self.circleLeft()
+           # self.circleLeft()
             time.sleep(.1)
             self.servoSweep()
             time.sleep(.1)
