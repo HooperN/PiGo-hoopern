@@ -267,6 +267,5 @@ class Pigo:
 
 beatrix = Pigo()
 
-beatrix.
+beatrix.avoidance()
 
-beatrix.stop()
