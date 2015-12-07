@@ -34,7 +34,7 @@ class Pigo:
 
 
     def moveIt(self):
-        if self.checkDist() = True:
+        if self.checkDist():
             fwd()
             time.sleep(2)
             self.checkDist()
