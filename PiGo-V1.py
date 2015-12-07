@@ -20,6 +20,8 @@ class Pigo:
 
     free = [0] * 180
 
+    superfree = [0] * 180
+
     def __init__(self):
         print "I've gained sentience; hello world"
         self.checkDist()
@@ -162,24 +164,6 @@ class Pigo:
             led_off(0)
             i += 1
 
-    def findPathLeft(self):
-
-
-    def findPathRight(self):
-        dist = us_dist(15)
-        while dist < STOP_DIST:
-            stop()
-            bwd()
-            time.sleep(.5)
-            stop()
-            right_rot()
-            time.sleep(.2)
-            stop()
-            print "Dist:",dist,'cm'
-            return True
-        print "Path is now clear, I think."
-
-
     def trot(self):   #method to adjust the forward speed
         set_left_speed(180)
         set_right_speed(180)
@@ -202,17 +186,64 @@ class Pigo:
                 time.sleep(.5)
 
     def servoCheck(self):
-        for ang in range(60, 120, 5):
-            free[ang] = us_dist(15)
+        for ang in range(50, 110, 3):
+            self.free[ang] = us_dist(15)
+
+    def findPathLeft(self):
+         if self.servoCheck():
+            if self.findAngle() is False:
+                if self.findPathRight() is False:
+                    self.turnTo('left')
+                    return True
+                else:
+                    return False
+            else:
+                print "Check the find Angle"
+         else:
+            print "Check the Servo Check"
+
+    def findPathRight(self):
+        if self.servoCheck():
+            if self.findAngle() is False:
+                if self.findPathLeft() is False:
+                    self.turnTo('right')
+                    return True
+                else:
+                    return False
 
     def pathing(self):
         self.servoCheck()
-        for free[ang] < STOP_DIST:
+        for self.free[ang] < STOP_DIST:
+            self.superfree[].append
 
-    def turnTo(self):
-        
+    def turnTo(self, direction):
+        if direction is 'left':
+            left()
+            time.sleep(1)
+            stop()
+        elif direction is 'right':
+            right()
+            time.sleep(1)
+            stop()
+        else:
+            return False
 
 
+    def findAngle(self):
+        self.servoCheck()
+        for dist in self.free:
+            counter = 0
+            if dist > STOP_DIST:
+                counter += 1
+            else:
+                counter = 0
+            if counter = 20:
+                return True
+        return False
+
+
+
+    def reverse(self):
 
 
     def avoidance(self):
@@ -222,7 +253,7 @@ class Pigo:
             else:
                 self.servoCheck()
                 if self.pathing:
-                    self.turnTo(self.findAngle())
+                    self.turnTo(self.findAngle)
                 else:
                     self.reverse()
 
