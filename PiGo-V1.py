@@ -32,15 +32,15 @@ class Pigo:
         for x in range(5):
             stop()
 
+    def rightrot(self):
+        print "Let's turn right."
+        for x in range(3):
+            right_rot()
 
     def moveIt(self):
-        if self.checkDist():
+        print "Let's roll out."
+        for x in range(3):
             fwd()
-            time.sleep(2)
-            self.checkDist()
-        while fwd() == -1:
-            time.sleep(1)
-            print "I've fallen, and I can't get up!"
 
     def checkDist(self):
         if us_dist(15) < STOP_DIST:
@@ -73,9 +73,8 @@ class Pigo:
 
     def autoPilot(self):
         self.moveIt()
-        while True:
-            self.checkDist()
-            time.sleep(5)
+        while self.checkDist():
+            time.sleep(.5)
         self.stop()
 
     def servoSweep(self):
@@ -187,6 +186,8 @@ class Pigo:
 
     def servoCheck(self):
         for ang in range(50, 110, 3):
+            servo(ang)
+            time.sleep(.1)
             self.free[ang] = us_dist(15)
 
     def findPathLeft(self):
@@ -212,44 +213,58 @@ class Pigo:
                     return False
 
     def pathing(self):
-        self.servoCheck()
-        for self.free:
-            while self.free < STOP_DIST:
-                self.superfree[].append
-
-
-
-
-
-    def turnTo(self, direction):
-        if direction is 'left':
-            left()
-            time.sleep(1)
-            stop()
-        elif direction is 'right':
-            right()
-            time.sleep(1)
-            stop()
-        else:
-            return False
-
-
-    def findAngle(self):
-        self.servoCheck()
-        for dist in self.free:
-            counter = 0
-            if dist > STOP_DIST:
+        counter = 0
+        for ang in range(50, 110, 3):
+            if self.free[ang] > STOP_DIST:
                 counter += 1
             else:
                 counter = 0
-            if counter = 20:
+            if counter > (20/3):
                 return True
         return False
 
 
+    def turnTo(self, angle):
+        if angle < 80:
+            left()
+            time.sleep(1)
+            stop()
+        elif angle > 80:
+            right()
+            time.sleep(1)
+            stop()
+        else:
+            self.reverse()
+            time.sleep(2)
+            stop()
+
+
+    def findAngle(self):
+        counter = 0
+        option = []
+        optionindex = 0
+        for ang in range(50, 110, 3):
+            if self.free[ang] > STOP_DIST:
+                counter += 1
+            else:
+                counter = 0
+            if counter > (20/3):
+                counter = 0
+                option[optionindex] = ang - 10
+                optionindex += 1
+        for choice in option:
+            if choice > 80:
+                return choice
+            elif choice < 80:
+                return choice
+            else:
+                self.status['turn'] = True
+
 
     def reverse(self):
-
+        self.rightrot()
+        time.sleep(1)   #NEEDS ADJUSTMENT
+        self.stop()
 
     def avoidance(self):
         while True:
@@ -257,8 +272,8 @@ class Pigo:
                 self.autoPilot()
             else:
                 self.servoCheck()
-                if self.pathing:
-                    self.turnTo(self.findAngle)
+                if self.pathing():
+                    self.turnTo(self.findAngle())
                 else:
                     self.reverse()
 
