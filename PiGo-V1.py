@@ -213,7 +213,7 @@ class Pigo:
 
     def pathing(self):
         self.servoCheck()
-        for self.free[] < self.STOP_DIST:
+        for self.free < self.STOP_DIST:
             self.superfree[].append
 
     def turnTo(self, direction):
