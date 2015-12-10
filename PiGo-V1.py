@@ -72,7 +72,7 @@ class Pigo:
     ########################
 
     def autoPilot(self):
-        set_right_speed(70)
+        set_right_speed(60)
         set_left_speed(50)
         self.moveIt()
         while self.servoCheck():
