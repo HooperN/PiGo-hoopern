@@ -40,7 +40,7 @@ class Pigo:
             time.sleep(1)
 
     def leftrot(self):
-        print "Let's turn right."
+        print "Let's turn left."
         for x in range(3):
             time.sleep(1)
             left_rot()
