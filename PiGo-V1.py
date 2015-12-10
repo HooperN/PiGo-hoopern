@@ -35,7 +35,16 @@ class Pigo:
     def rightrot(self):
         print "Let's turn right."
         for x in range(3):
+            time.sleep(1)
             right_rot()
+            time.sleep(1)
+
+    def leftrot(self):
+        print "Let's turn right."
+        for x in range(3):
+            time.sleep(1)
+            left_rot()
+            time.sleep(1)
 
     def moveIt(self):
         print "Let's roll out."
