@@ -214,7 +214,7 @@ class Pigo:
                 counter += 1
             else:
                 counter = 0
-            if counter > (20/3):
+            if counter >= 6:
                 return True
         return False
 
