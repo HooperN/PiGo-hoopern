@@ -7,7 +7,7 @@ import sys
 from collections import Counter
 import math
 
-STOP_DIST = 20
+STOP_DIST = 30
 
 class Pigo:
 
