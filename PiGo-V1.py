@@ -84,9 +84,13 @@ class Pigo:
         set_right_speed(64)
         set_left_speed(50)
         self.moveIt()
-        while self.servoCheck():
-            stop()
-            time.sleep(.5)
+        servo(80)
+        if self.checkDist() == False:
+            while self.servoCheck():
+                stop()
+                time.sleep(.5)
+        else:
+            return
         self.stop()
 
     def servoSweep(self):
