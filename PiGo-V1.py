@@ -81,7 +81,7 @@ class Pigo:
     ########################
 
     def autoPilot(self):
-        set_right_speed(60)
+        set_right_speed(64)
         set_left_speed(50)
         self.moveIt()
         while self.servoCheck():
@@ -192,7 +192,7 @@ class Pigo:
                 time.sleep(.5)
 
     def servoCheck(self):
-        for ang in range(50, 110, 3):
+        for ang in range(20, 160, 3):
             servo(ang)
             time.sleep(.1)
             self.free[ang] = us_dist(15)
@@ -221,7 +221,7 @@ class Pigo:
 
     def pathing(self):
         counter = 0
-        for ang in range(50, 110, 3):
+        for ang in range(20, 160, 3):
             if self.free[ang] > STOP_DIST:
                 counter += 1
             else:
@@ -248,7 +248,7 @@ class Pigo:
         counter = 0
         option = [0] * 20
         optionindex = 0
-        for ang in range(50, 110, 3):
+        for ang in range(20, 160, 3):
             if self.free[ang] > STOP_DIST:
                 counter += 1
             else:
