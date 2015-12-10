@@ -237,7 +237,7 @@ class Pigo:
 
     def findAngle(self):
         counter = 0
-        option = []
+        option = [0] * 20
         optionindex = 0
         for ang in range(50, 110, 3):
             if self.free[ang] > STOP_DIST:
@@ -250,9 +250,9 @@ class Pigo:
                 optionindex += 1
         for choice in option:
             if choice > 80:
-                return choice
+                self.superfree[].append
             elif choice < 80:
-                return choice
+                self.superfree[].append
             else:
                 self.status['turn'] = True
 
