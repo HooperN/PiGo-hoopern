@@ -250,9 +250,9 @@ class Pigo:
                 optionindex += 1
         for choice in option:
             if choice > 80:
-                self.superfree[].append
+                return choice
             elif choice < 80:
-                self.superfree[].append
+                return choice
             else:
                 self.status['turn'] = True
 
