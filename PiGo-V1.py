@@ -99,7 +99,6 @@ class Pigo:
             print "Check keepGoing"
             stop()
 
-
     def circleRight(self):
         print "Start CR"
         for x in range(3):
@@ -137,7 +136,6 @@ class Pigo:
         else:
             print "Check keepGoing"
 
-
     def fullHeadturn(self):
         print "Head Turn!"
         servo(0)
@@ -146,9 +144,6 @@ class Pigo:
         time.sleep(1)
         servo(0)
         time.sleep(1)
-
-
-
 
     def strobe(self):
         i = 0
@@ -223,7 +218,6 @@ class Pigo:
                 return True
         return False
 
-
     def turnTo(self, angle):
         if angle < 80:
             left()
@@ -237,7 +231,6 @@ class Pigo:
             self.reverse()
             time.sleep(2)
             stop()
-
 
     def findAngle(self):
         counter = 0
@@ -260,10 +253,9 @@ class Pigo:
             else:
                 self.status['turn'] = True
 
-
     def reverse(self):
         self.rightrot()
-        time.sleep(1)   #NEEDS ADJUSTMENT
+        time.sleep(1)
         self.stop()
 
     def avoidance(self):
@@ -277,10 +269,6 @@ class Pigo:
                 else:
                     self.reverse()
 
-
-
-
-
     ############################
     ### FULL APP STARTS HERE ###
     ############################
@@ -288,4 +276,3 @@ class Pigo:
 beatrix = Pigo()
 
 beatrix.avoidance()
-
